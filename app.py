@@ -5,9 +5,9 @@ from datetime import datetime, timedelta
 import json
 import itertools
 import random
+import os
 
-f = open("tok.txt", "r")
-token = f.read()
+token = os.getenv("TOKEN")
 
 intents = discord.Intents.all()
 activities = itertools.cycle([
