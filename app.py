@@ -6,6 +6,9 @@ import json
 import itertools
 import random
 import os
+from keep_alive import keep_alive
+
+keep_alive()
 
 token = os.getenv("TOKEN")
 
