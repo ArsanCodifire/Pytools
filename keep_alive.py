@@ -13,7 +13,7 @@ HTML = """
 <style>
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: url('https://cdn.vectorstock.com/i/750p/05/35/navy-purple-gradient-abstract-background-vector-37640535.avif') no-repeat center center fixed;
+        background: url('https://raw.githubusercontent.com/ArsanCodifire/Profile-pic/refs/heads/main/Bg.jpg') no-repeat center center fixed;
         background-size: cover;
         color: white;
         text-align: center;
