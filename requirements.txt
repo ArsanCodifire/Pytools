@@ -1,2 +1,3 @@
 discord
-flask
+fastapi
+uvicorn
