@@ -1,8 +1,10 @@
 import os
-from flask import Flask, render_template_string
 from threading import Thread
+import uvicorn
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 
-app = Flask('')
+app = FastAPI()
 
 HTML = """
 <!DOCTYPE html>
@@ -56,13 +58,13 @@ HTML = """
 </html>
 """
 
-@app.route('/')
-def home():
-    return render_template_string(HTML)
+@app.get("/", response_class=HTMLResponse)
+async def home():
+    return HTML
 
 def run():
     port = int(os.environ.get("PORT", 10000))
-    app.run(host='0.0.0.0', port=port)
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="warning")
 
 def keep_alive():
-    Thread(target=run).start()
+    Thread(target=run, daemon=True).start()
